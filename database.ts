@@ -1,9 +1,9 @@
 enum TypesPizza {
     "meat",
-"vegan",
-"grill",
-"closed",
-"spicy",
+    "vegan",
+    "grill",
+    "closed",
+    "spicy",
 }
 
 export type Pizza = {

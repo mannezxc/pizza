@@ -5,7 +5,6 @@ import React, { JSX, useContext } from "react";
 import Link from "next/link";
 import './header.scss'
 
-
 export default function Header(): JSX.Element {
     const { purchases } = useContext(PurchaseContext)
 
@@ -24,8 +23,8 @@ export default function Header(): JSX.Element {
             </Link>
             <Link href={'/purchases'}>
                 <div className='purchase'>
-                    <div style={{display: 'flex'}}>
-                        {purchases?.reduce((acc: number, item) => acc + item.price * item.amount, 0)} ₽
+                    <div style={{ display: 'flex' }}>
+                        {purchases!.reduce((acc: number, item) => acc + item.price * item.amount, 0)} ₽
                     </div>
                     <hr style={{
                         width: '1px',
@@ -33,7 +32,7 @@ export default function Header(): JSX.Element {
                         margin: '13px',
                         background: 'rgba(255, 255, 255, 0.25)'
                     }} />
-                    <div style={{display: 'flex', alignItems: 'center'}} className={'purchaseTrash'}>
+                    <div style={{ display: 'flex', alignItems: 'center' }} className={'purchaseTrash'}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                             <path
                                 d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z"
@@ -45,7 +44,7 @@ export default function Header(): JSX.Element {
                                 d="M4.78002 4.99999H16.3334L15.2134 10.5933C15.1524 10.9003 14.9854 11.176 14.7417 11.3722C14.4979 11.5684 14.1929 11.6727 13.88 11.6667H6.83335C6.50781 11.6694 6.1925 11.553 5.94689 11.3393C5.70128 11.1256 5.54233 10.8295 5.50002 10.5067L4.48669 2.82666C4.44466 2.50615 4.28764 2.21182 4.04482 1.99844C3.80201 1.78505 3.48994 1.66715 3.16669 1.66666H1.66669"
                                 stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        {purchases?.reduce((acc: number, item) => acc + item.amount, 0)}
+                        {purchases!.reduce((acc: number, item) => acc + item.amount, 0)}
                     </div>
                 </div>
             </Link>
