@@ -1,0 +1,25 @@
+.pizzasList {
+  margin-top: 16px;
+
+  .pl-title {
+    display: block;
+    color: #000;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.32px;
+    margin-bottom: 35px;
+  }
+
+  .pizzasBlock {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 65px;
+    width: 100%;
+    //display: grid;
+    //grid-template-columns: repeat(4, 1fr);
+    //grid-gap: 35px;
+    //justify-content: space-between;
+  }
+}

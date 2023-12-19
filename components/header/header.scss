@@ -1,0 +1,50 @@
+header {
+  background: #fff;
+  margin-bottom: 20px;
+  width: 100%;
+  z-index: 1;
+  padding: 0 48px 0 67px;
+}
+
+.purchaseBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchase {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  background: #FE5F1E;
+  padding: 0 23px;
+  color: #fff;
+  box-sizing: border-box;
+
+  .purchaseTrash {
+    svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+.purchaseLogo {
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 17px;
+  }
+
+  .purchaseLogoContent {
+    display: flex;
+    flex-direction: column;
+    color: #7B7B7B;
+
+    p {
+      font-size: 24px;
+      font-weight: 700;
+      color: #000;
+    }
+
+  }
+}
+
