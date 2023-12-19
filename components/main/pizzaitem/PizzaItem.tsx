@@ -55,7 +55,7 @@ export const PizzaItem: FC<Pizza> = (
             </p>
             <button onClick={() => {
                 setPurchases((prev: TPurhcasePizza[]) => {
-                    if (prev.some(p => p.name == selPizza.name && p.testo == selPizza.testo && p.sizes == selPizza.sizes)) {
+                    if (prev?.some(p => p.name == selPizza.name && p.testo == selPizza.testo && p.sizes == selPizza.sizes)) {
                         const t = [...prev.map(p => {
                             if (p.name == selPizza.name && p.testo == selPizza.testo && p.sizes == selPizza.sizes) {
                                 return { ...p, amount: p.amount + 1 }
@@ -65,7 +65,7 @@ export const PizzaItem: FC<Pizza> = (
                         localStorage.setItem('pizzas', JSON.stringify(t))
                         return t
                     }
-                    if (prev.some(p => p.id == selPizza.id)) {
+                    if (prev?.some(p => p.id == selPizza.id)) {
                         const t = [...prev, {
                             ...selPizza,
                             id: selPizza.id + Math.floor(Math.random() * 10000)
