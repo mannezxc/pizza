@@ -11,7 +11,7 @@ export const PurchasesBlock = () => {
     return <section className={'sc-purchases'}>
         <Title />
         <div className={'purchaseListItem'}>
-            {purchases?.map((item: TPurhcasePizza) => <div key={item.id}>
+            {purchases!.map((item: TPurhcasePizza) => <div key={item.id}>
                 <hr style={{
                     height: '1px',
                     width: '100%',
@@ -22,8 +22,8 @@ export const PurchasesBlock = () => {
             </div>)}
         </div>
         <Info
-            amount={purchases?.reduce((acc: number, item) => acc + item.amount, 0)}
-            sum={purchases?.reduce((acc: number, item) => acc + item.price * item.amount, 0)}
+            amount={purchases!.reduce((acc: number, item) => acc + item.amount, 0)}
+            sum={purchases!.reduce((acc: number, item) => acc + item.price * item.amount, 0)}
         />
         <Footer />
     </section>

@@ -11,7 +11,7 @@ export default function PurchasesPage(): JSX.Element {
 
     return <>
         {
-            purchases.length > 0
+            purchases!.length > 0
                 ?
                 <PurchasesBlock />
                 :
