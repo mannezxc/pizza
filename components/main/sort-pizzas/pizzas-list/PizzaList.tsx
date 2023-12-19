@@ -1,11 +1,10 @@
 "use client"
 
-import {FC, JSX, useContext, useEffect} from "react";
-import {PizzaItem} from "@/components/main/pizzaitem/PizzaItem";
-import './pizzalist.scss'
-import {Flex} from "@/styled-comp/Flex";
-import {Pizza, pizzas} from '@/database'
 import {PurchaseContext} from "@/components/context/GlobalConext";
+import {PizzaItem} from "@/components/main/pizzaitem/PizzaItem";
+import {FC, JSX, useContext, useEffect} from "react";
+import {Pizza, pizzas} from '@/database'
+import './pizzalist.scss'
 
 export const PizzaList: FC = (): JSX.Element => {
     const {pizzasList, setPizzasList} = useContext(PurchaseContext)

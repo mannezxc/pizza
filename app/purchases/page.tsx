@@ -1,21 +1,21 @@
 "use client"
 
-import {FC, JSX, useContext} from "react";
-import {PurchaseContext, TPurhcasePizza} from "@/components/context/GlobalConext";
+import { PurchaseContext } from "@/components/context/GlobalConext";
+import { PurchasesEmpty } from "@/components/purchases/PurchasesEmpty";
+import { PurchasesBlock } from "@/components/purchases/PurchasesBlock";
+import { JSX, useContext } from "react";
 import './page.scss'
-import {PurchasesEmpty} from "@/components/purchases/PurchasesEmpty";
-import {PurchasesBlock} from "@/components/purchases/PurchasesBlock";
 
 export default function PurchasesPage(): JSX.Element {
-    const {purchases} = useContext(PurchaseContext)
+    const { purchases } = useContext(PurchaseContext)
 
     return <>
         {
             purchases.length > 0
                 ?
-                <PurchasesBlock/>
+                <PurchasesBlock />
                 :
-                <PurchasesEmpty/>
+                <PurchasesEmpty />
         }
     </>
 }

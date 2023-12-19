@@ -2,13 +2,10 @@
 
 import React, {
     createContext,
-    Dispatch, DispatchWithoutAction,
-    FC,
-    ProviderProps,
-    ReactNode, ReducerStateWithoutAction, ReducerWithoutAction,
+    Dispatch,
     SetStateAction,
-    useState,
-    WeakValidationMap
+    useEffect,
+    useState
 } from "react";
 import {Pizza} from "@/database";
 
@@ -35,13 +32,17 @@ export const PurchaseContext = createContext({} as ContextValue)
 export const PurchaseGlobalContext = ({children}: { children: React.ReactNode }) => {
     const [purchases, setPurchases] = useState<TPurhcasePizza[]>([])
     const [pizzasList, setPizzasList] = useState<Pizza[]>([])
+
+    useEffect(() => {
+        setPurchases(JSON.parse(localStorage.getItem('pizzas')!))
+    }, [])
+
     const value: ContextValue = {
         purchases,
         setPurchases,
         pizzasList,
         setPizzasList
     }
-
     return <PurchaseContext.Provider value={value}>
         {children}
     </PurchaseContext.Provider>

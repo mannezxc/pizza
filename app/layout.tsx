@@ -1,17 +1,16 @@
-import type {Metadata} from 'next'
-import {Inter} from 'next/font/google'
-import './reset.css'
-import './globals.css'
-import React from "react";
-import {Flex} from "@/styled-comp/Flex";
-import Header from "@/components/header/Header";
 import {PurchaseGlobalContext} from "@/components/context/GlobalConext";
+import Header from "@/components/header/Header";
+import {Inter} from 'next/font/google'
+import type {Metadata} from 'next'
+import React from "react";
+import './globals.css'
+import './reset.css'
 
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
-    title: 'React Pizza',
-    description: 'Best Pizza in the world',
+    title: 'Pizza',
+    description: 'Best Pizza in the world'
 }
 
 export default function RootLayout(
@@ -22,6 +21,9 @@ export default function RootLayout(
     }) {
     return (
         <html lang="en">
+        <head>
+            <link rel="icon" href="./static/logo.ico" />
+        </head>
         <body className={inter.className}>
         <PurchaseGlobalContext>
             <div className={'global-container'}>
